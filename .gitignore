@@ -4,6 +4,8 @@
 # vscode
 
 .vscode
+*.sqlite
+migrations/
 
 ### Flask ###
 instance/*
