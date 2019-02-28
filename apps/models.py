@@ -30,3 +30,19 @@ class PostScrapy(db.Model):
 
     def __repr__(self):
         return f"{title}"
+
+
+class WebWp(db.Model):
+    __tablename__ = 'webwp'
+    id = db.Column(db.Integer(), primary_key=True)
+    url = db.Column(db.String())
+    user = db.Column(db.String())
+    password = db.Column(db.String())
+
+    def __init__(self, url, user, password):
+        self.url = url
+        self.id = user
+        self.password = password
+
+    def __repr__(self):
+        return f"url de la web {self.url}"
