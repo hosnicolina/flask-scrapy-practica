@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block style %}
+<style>
+.web_list-form{
+  margin-top:50px;
+}
+</style>
+{% endblock style %}
+{% block content %}
+<table class="table web_list-form">
+  <thead>
+    <tr>
+      <th>url</th>
+      <th>username</th>
+      <th>password</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for web in webs %}
+    <tr>
+      <td scope="row">{{web.url}}</td>
+      <td>{{web.name}}</td>
+      <td>{{web.webpass}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

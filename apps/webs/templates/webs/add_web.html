@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block style %}
+<style>
+.web-form{
+  margin-top:100px;
+}
+</style>
+{% endblock style %}
+{% block content %}
+<div class="row">
+  <form  method="POST" class="col s6 offset-s3 web-form">
+    {{form.hidden_tag()}}
+    <div class="input-field">
+      <label for="">{{form.url.label}}</label>
+      {{form.url(class="form-control")}}
+      {% for error in form.url.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>{{error}}</strong>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="input-field">
+      <label for="">{{form.username.label}}</label>
+      {{form.username(class="form-control")}}
+      {% for error in form.username.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>{{error}}</strong>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="input-field">
+          <label for="">{{form.password.label}}</label>
+      {{form.password(class="form-control")}}
+      {% for error in form.password.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>{{error}}</strong>
+        </div>
+      {% endfor %}
+
+    </div>
+    <div class="input-field">
+      {{form.submit(class="btn btn-outline-primary btn-block")}}
+    </div>
+  </form>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+      $(".alert").alert();
+    </script>
+{% endblock scripts %}
