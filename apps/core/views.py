@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request, url_for, flash, session, Blueprint
 from apps.core.forms import UlrForm
-from helpers_function import clean_url
+from apps.helpers_function import clean_url
 import requests
 
 core = Blueprint('core', __name__)
