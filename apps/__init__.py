@@ -17,6 +17,8 @@ Migrate(app,db)
 
 from apps.core.views import core
 from apps.posts.views import posts
+from apps.webs.views import webs
 
 app.register_blueprint(core)
 app.register_blueprint(posts)
+app.register_blueprint(webs)
