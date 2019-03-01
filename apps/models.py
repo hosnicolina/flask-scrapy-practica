@@ -32,17 +32,14 @@ class PostScrapy(db.Model):
         return f"{title}"
 
 
-class WebWp(db.Model):
-    __tablename__ = 'webwp'
+class WebWordpress(db.Model):
+    __tablename__ = 'wordpressweb'
     id = db.Column(db.Integer(), primary_key=True)
     url = db.Column(db.String())
-    user = db.Column(db.String())
-    password = db.Column(db.String())
+    name = db.Column(db.String())
+    webpass = db.Column(db.String())
 
-    def __init__(self, url, user, password):
+    def __init__(self, url, name, webpass):
         self.url = url
-        self.id = user
-        self.password = password
-
-    def __repr__(self):
-        return f"url de la web {self.url}"
+        self.name = name
+        self.webpass = webpass
